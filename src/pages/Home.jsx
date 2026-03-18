@@ -1,8 +1,11 @@
+import CoinList from "../components/CoinList";
+
 function Home() {
   return (
     <div>
       <h2>Welkom op mijn dashboard</h2>
-      <p>Hier komt straks de lijst met coins te staan.</p>
+      <p>Hieronder zie je een eerste overzicht van coins.</p>
+      <CoinList />
     </div>
   );
 }
