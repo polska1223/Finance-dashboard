@@ -5,7 +5,7 @@ function SearchBar({ searchTerm, setSearchTerm }) {
         type="text"
         placeholder="Zoek een coin..."
         value={searchTerm}
-        onChange={(event) => setSearchTerm(event.target.value)}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
   );

@@ -1,10 +1,4 @@
-function CoinList({ searchTerm }) {
-  const coins = [
-    { id: 1, name: "Bitcoin", price: "$65,000", change: "+2.4%" },
-    { id: 2, name: "Ethereum", price: "$3,200", change: "-1.1%" },
-    { id: 3, name: "Solana", price: "$140", change: "+4.8%" },
-  ];
-
+function CoinList({ coins, searchTerm }) {
   const filteredCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -13,13 +7,18 @@ function CoinList({ searchTerm }) {
     <section>
       <h2>Coin overzicht</h2>
 
-      {filteredCoins.map((coin) => (
-        <div key={coin.id}>
-          <h3>{coin.name}</h3>
-          <p>Prijs: {coin.price}</p>
-          <p>Verandering: {coin.change}</p>
-        </div>
-      ))}
+      {filteredCoins.length > 0 ? (
+        filteredCoins.map((coin) => (
+          <div key={coin.id}>
+            <h3>{coin.name}</h3>
+            <p>Symbool: {coin.symbol.toUpperCase()}</p>
+            <p>Prijs: ${coin.current_price}</p>
+            <p>24 uur verschil: {coin.price_change_percentage_24h?.toFixed(2)}%</p>
+          </div>
+        ))
+      ) : (
+        <p>Geen coins gevonden.</p>
+      )}
     </section>
   );
 }
