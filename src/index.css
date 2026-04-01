@@ -24,7 +24,7 @@ section h2 {
   margin-bottom: 20px;
 }
 
-section div {
+.coin-card {
   background-color: white;
   padding: 15px;
   margin-bottom: 15px;
@@ -49,4 +49,43 @@ section div {
   text-decoration: none;
   color: inherit;
   display: block;
+}
+
+.coin-detail-page {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.coin-detail-image {
+  width: 80px;
+  margin: 15px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.favorite-button,
+.remove-button {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.favorite-button {
+  background-color: #222;
+  color: white;
+}
+
+.remove-button {
+  background-color: #cc3333;
+  color: white;
 }
