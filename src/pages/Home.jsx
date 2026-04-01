@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CoinList from "../components/CoinList";
 import SearchBar from "../components/SearchBar";
 import FavoriteList from "../components/FavoriteList";
+import PriceChart from "../components/PriceChart";
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,11 +51,14 @@ function Home() {
       {loading ? (
         <p>Data wordt geladen...</p>
       ) : (
-        <CoinList
-          coins={coins}
-          searchTerm={searchTerm}
-          addFavorite={addFavorite}
-        />
+        <>
+          <PriceChart coins={coins} />
+          <CoinList
+            coins={coins}
+            searchTerm={searchTerm}
+            addFavorite={addFavorite}
+          />
+        </>
       )}
 
       <FavoriteList favorites={favorites} removeFavorite={removeFavorite} />
